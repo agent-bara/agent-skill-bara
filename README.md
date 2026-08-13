@@ -1,8 +1,8 @@
 # Agent Skills
 
-**Production-grade engineering skills for AI coding agents.**
+**Keterampilan (skills) rekayasa kelas produksi untuk agen pemrograman AI.**
 
-Skills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.
+Keterampilan mengkodekan alur kerja, gerbang kualitas, dan praktik terbaik yang digunakan oleh senior engineer saat membangun perangkat lunak. Keterampilan ini dipaketkan agar agen AI mengikutinya secara konsisten di setiap fase pengembangan.
 
 <a href="https://trendshift.io/repositories/25200" target="_blank"><img src="https://trendshift.io/api/badge/repositories/25200" alt="addyosmani%2Fagent-skills | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
@@ -19,75 +19,75 @@ Skills encode the workflows, quality gates, and best practices that senior engin
 
 ---
 
-## Commands
+## Perintah (Commands)
 
-8 slash commands that map to the development lifecycle. Each one activates the right skills automatically.
+8 slash commands yang memetakan siklus hidup pengembangan. Masing-masing mengaktifkan keterampilan yang tepat secara otomatis.
 
-| What you're doing | Command | Key principle |
+| Apa yang Anda lakukan | Perintah | Prinsip Utama |
 |-------------------|---------|---------------|
-| Define what to build | `/spec` | Spec before code |
-| Plan how to build it | `/plan` | Small, atomic tasks |
-| Build incrementally | `/build` | One slice at a time |
-| Prove it works | `/test` | Tests are proof |
-| Review before merge | `/review` | Improve code health |
-| Audit web performance | `/webperf` | Measure before you optimize |
-| Simplify the code | `/code-simplify` | Clarity over cleverness |
-| Ship to production | `/ship` | Faster is safer |
+| Tentukan apa yang akan dibangun | `/spec` | Spesifikasi sebelum kode |
+| Rencanakan cara membangunnya | `/plan` | Tugas-tugas kecil yang atomik |
+| Bangun secara bertahap | `/build` | Satu bagian kecil pada satu waktu |
+| Buktikan bahwa itu berfungsi | `/test` | Pengujian adalah bukti |
+| Tinjau sebelum penggabungan | `/review` | Tingkatkan kesehatan kode |
+| Audit performa web | `/webperf` | Ukur sebelum Anda optimalkan |
+| Sederhanakan kode | `/code-simplify` | Kejelasan di atas kecerdasan |
+| Rilis ke produksi | `/ship` | Lebih cepat lebih aman |
 
-Want fewer manual steps once the spec exists? **`/build auto`** generates the plan and implements every task in a single approved pass — you approve the plan once, then it runs autonomously. It removes the human stepping *between* tasks, not the verification: every task is still test-driven and committed individually, and it pauses on failures or risky steps.
+Ingin lebih sedikit langkah manual setelah spesifikasi ada? **`/build auto`** menghasilkan rencana dan mengimplementasikan setiap tugas dalam satu langkah yang disetujui — Anda menyetujui rencana sekali, lalu berjalan secara otonom. Ini menghilangkan langkah campur tangan manusia *di antara* tugas-tugas, namun tetap menyertakan verifikasi: setiap tugas tetap diuji (TDD) dan di-commit satu per satu, serta akan berhenti otomatis jika terjadi kegagalan atau langkah berisiko.
 
-Skills also activate automatically based on what you're doing — designing an API triggers `api-and-interface-design`, building UI triggers `frontend-ui-engineering`, and so on.
+Keterampilan juga aktif secara otomatis berdasarkan apa yang Anda lakukan — merancang API memicu `api-and-interface-design`, membangun antarmuka pengguna memicu `frontend-ui-engineering`, dan seterusnya.
 
 ---
 
-## Quick Start
+## Mulai Cepat
 
-**Fastest path — any agent, one command.** The open [skills CLI](https://github.com/vercel-labs/skills) installs into 70+ agents (Claude Code, Cursor, Codex, Copilot, Cline, and more):
-
-```bash
-npx skills add addyosmani/agent-skills            # install all 24 skills
-npx skills add addyosmani/agent-skills --list     # browse before installing
-```
-
-Or grab individual skills:
+**Jalur tercepat — agen apa pun, satu perintah.** [Skills CLI](https://github.com/vercel-labs/skills) terbuka terinstal ke dalam 70+ agen (Claude Code, Cursor, Codex, Copilot, Cline, dll):
 
 ```bash
-npx skills add addyosmani/agent-skills --skill code-review-and-quality   # five-axis review before merge
-npx skills add addyosmani/agent-skills --skill interview-me              # requirements interrogation, one question at a time
-npx skills add addyosmani/agent-skills --skill test-driven-development   # red-green-refactor, enforced
+npx skills add addyosmani/agent-skills            # instal semua 24 keterampilan
+npx skills add addyosmani/agent-skills --list     # lihat daftar sebelum instal
 ```
 
-> **Installing one skill?** A per-skill `npx` install copies only
-> `skills/<name>/`, not the repo-level `references/` directory. The skill still
-> works, but paths to supplementary shared checklists are unavailable. Use a
-> whole-repo integration, clone the repository, or copy the needed checklist into
-> a `references/` directory inside the installed skill. This portability gap is
-> tracked in [#361](https://github.com/addyosmani/agent-skills/issues/361).
+Atau ambil keterampilan secara individual:
 
-Prefer a native integration? Pick your tool below.
+```bash
+npx skills add addyosmani/agent-skills --skill code-review-and-quality   # tinjauan lima sumbu sebelum penggabungan
+npx skills add addyosmani/agent-skills --skill interview-me              # interogasi kebutuhan, satu pertanyaan pada satu waktu
+npx skills add addyosmani/agent-skills --skill test-driven-development   # red-green-refactor, dipaksakan
+```
+
+> **Menginstal satu keterampilan?** Proses instalasi `npx` per-skill hanya menyalin
+> `skills/<name>/`, bukan direktori `references/` tingkat repositori. Keterampilan ini tetap
+> berfungsi, tetapi jalur ke daftar periksa bersama tambahan tidak tersedia. Gunakan
+> integrasi seluruh repositori, klon repositori, atau salin daftar periksa yang diperlukan ke dalam
+> direktori `references/` di dalam keterampilan yang diinstal. Celah portabilitas ini
+> dilacak di [#361](https://github.com/addyosmani/agent-skills/issues/361).
+
+Lebih suka integrasi bawaan (native)? Pilih alat Anda di bawah ini.
 
 <details>
-<summary><b>Claude Code (recommended)</b></summary>
+<summary><b>Claude Code (disarankan)</b></summary>
 
-**Marketplace install:**
+**Instal dari marketplace:**
 
 ```
 /plugin marketplace add addyosmani/agent-skills
 /plugin install agent-skills@addy-agent-skills
 ```
 
-> **SSH errors?** The marketplace clones repos via SSH. If you don't have SSH keys set up on GitHub, either [add your SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) or use the full HTTPS URL to force HTTPS cloning during the marketplace-add step:
+> **Kesalahan SSH?** Marketplace mengkloning repo melalui SSH. Jika Anda belum menyiapkan kunci SSH di GitHub, [tambahkan kunci SSH Anda](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) atau gunakan URL HTTPS lengkap untuk memaksa kloning HTTPS selama langkah add marketplace:
 > ```bash
 > /plugin marketplace add https://github.com/addyosmani/agent-skills.git
 > /plugin install agent-skills@addy-agent-skills
 > ```
 >
-> If `/plugin install` still fails with `git@github.com: Permission denied (publickey)` on Windows or macOS, the recommended workaround is to configure Git once to rewrite GitHub SSH URLs to HTTPS for subprocess clones:
+> Jika `/plugin install` masih gagal dengan `git@github.com: Permission denied (publickey)` di Windows atau macOS, solusi yang disarankan adalah mengonfigurasi Git satu kali untuk menulis ulang URL SSH GitHub menjadi HTTPS untuk subproses kloning:
 > ```bash
 > git config --global url."https://github.com/".insteadOf git@github.com:
 > ```
 
-**Local / development:**
+**Lokal / pengembangan:**
 
 ```bash
 git clone https://github.com/addyosmani/agent-skills.git
@@ -99,22 +99,22 @@ claude --plugin-dir /path/to/agent-skills
 <details>
 <summary><b>Cursor</b></summary>
 
-Put workflow skills under `.cursor/skills/` (sync from `agent-skills/skills/`) and short policies in `.cursor/rules/*.mdc` — do not paste full skills into rules. See [docs/cursor-setup.md](docs/cursor-setup.md).
+Letakkan keterampilan alur kerja di bawah `.cursor/skills/` (sinkronkan dari `agent-skills/skills/`) dan aturan singkat di `.cursor/rules/*.mdc` — jangan tempelkan keterampilan penuh ke dalam aturan (rules). Lihat [docs/cursor-setup.md](docs/cursor-setup.md).
 
 </details>
 
 <details>
 <summary><b>Antigravity CLI</b></summary>
 
-Install as a native plugin for skills, subagents, and slash commands. See [docs/antigravity-setup.md](docs/antigravity-setup.md).
+Instal sebagai plugin bawaan untuk keterampilan, subagen, dan perintah slash. Lihat [docs/antigravity-setup.md](docs/antigravity-setup.md).
 
-**Install from the repo:**
+**Instal dari repo:**
 
 ```bash
 agy plugin install https://github.com/addyosmani/agent-skills.git
 ```
 
-**Install from a local clone:**
+**Instal dari klon lokal:**
 
 ```bash
 git clone https://github.com/addyosmani/agent-skills.git
@@ -126,15 +126,15 @@ agy plugin install ./agent-skills
 <details>
 <summary><b>Gemini CLI</b></summary>
 
-Install as native skills for auto-discovery, or add to `GEMINI.md` for persistent context. See [docs/gemini-cli-setup.md](docs/gemini-cli-setup.md).
+Instal sebagai keterampilan bawaan untuk penemuan otomatis, atau tambahkan ke `GEMINI.md` untuk konteks berkelanjutan. Lihat [docs/gemini-cli-setup.md](docs/gemini-cli-setup.md).
 
-**Install from the repo:**
+**Instal dari repo:**
 
 ```bash
 gemini skills install https://github.com/addyosmani/agent-skills.git --path skills
 ```
 
-**Install from a local clone:**
+**Instal dari klon lokal:**
 
 ```bash
 gemini skills install ./agent-skills/skills/
@@ -145,64 +145,64 @@ gemini skills install ./agent-skills/skills/
 <details>
 <summary><b>Windsurf</b></summary>
 
-Add skill contents to your Windsurf rules configuration. See [docs/windsurf-setup.md](docs/windsurf-setup.md).
+Tambahkan konten keterampilan ke konfigurasi aturan Windsurf Anda. Lihat [docs/windsurf-setup.md](docs/windsurf-setup.md).
 
 </details>
 
 <details>
 <summary><b>OpenCode</b></summary>
 
-Uses agent-driven skill execution via AGENTS.md and the `skill` tool.
+Menggunakan eksekusi keterampilan berbasis agen melalui AGENTS.md dan perkakas `skill`.
 
-See [docs/opencode-setup.md](docs/opencode-setup.md).
+Lihat [docs/opencode-setup.md](docs/opencode-setup.md).
 
 </details>
 
 <details>
 <summary><b>GitHub Copilot</b></summary>
 
-Use agent definitions from `agents/` as Copilot personas and skill content in `.github/copilot-instructions.md`. See [docs/copilot-setup.md](docs/copilot-setup.md).
+Gunakan definisi agen dari `agents/` sebagai persona Copilot dan konten keterampilan di `.github/copilot-instructions.md`. Lihat [docs/copilot-setup.md](docs/copilot-setup.md).
 
 </details>
 
 <details>
   <summary><b>Kiro IDE & CLI </b></summary>
-  Skills for Kiro reside under ".kiro/skills/" and can be stored under Project or Global level. Kiro also supports Agents.md. See Kiro docs at https://kiro.dev/docs/skills/
+  Keterampilan untuk Kiro berada di bawah ".kiro/skills/" dan dapat disimpan di tingkat Proyek atau Global. Kiro juga mendukung Agents.md. Lihat dokumentasi Kiro di https://kiro.dev/docs/skills/
 </details>
 
 <details>
 <summary><b>Codex</b></summary>
 
-Install as a native Codex plugin (Codex CLI v0.122+):
+Instal sebagai plugin Codex bawaan (Codex CLI v0.122+):
 
 ```bash
 codex plugin marketplace add addyosmani/agent-skills
 codex plugin add agent-skills@agent-skills
 ```
 
-The first command registers the marketplace; the second installs the plugin. Codex reads the root `skills/` directory directly through `.codex-plugin/plugin.json`. Once installed, invoke skills in chat using `@` (e.g., `@spec-driven-development`). See [docs/codex-setup.md](docs/codex-setup.md) for local installation and troubleshooting.
+Perintah pertama mendaftarkan marketplace; yang kedua menginstal plugin. Codex membaca direktori `skills/` akar secara langsung melalui `.codex-plugin/plugin.json`. Setelah terinstal, jalankan keterampilan di obrolan menggunakan `@` (mis., `@spec-driven-development`). Lihat [docs/codex-setup.md](docs/codex-setup.md) untuk instalasi lokal dan pemecahan masalah.
 
 </details>
 
 <details>
 <summary><b>Command Code</b></summary>
 
-Install natively with the built-in `cmd skills` command. Command Code clones the repo, discovers every `SKILL.md`, and installs into `.commandcode/skills/`:
+Instal secara bawaan dengan perintah `cmd skills` yang disertakan. Command Code mengkloning repo, menemukan setiap `SKILL.md`, dan menginstalnya ke `.commandcode/skills/`:
 
 ```bash
-cmd skills add addyosmani/agent-skills            # pick skills to install (project)
-cmd skills add addyosmani/agent-skills --global   # install for all projects (~/.commandcode/skills/)
-cmd skills add addyosmani/agent-skills -s spec-driven-development  # install a specific skill
+cmd skills add addyosmani/agent-skills            # pilih keterampilan untuk diinstal (proyek)
+cmd skills add addyosmani/agent-skills --global   # instal untuk semua proyek (~/.commandcode/skills/)
+cmd skills add addyosmani/agent-skills -s spec-driven-development  # instal keterampilan tertentu
 ```
 
-Installed skills show up in the TUI slash menu, e.g. `/spec-driven-development`. See [docs/commandcode-setup.md](docs/commandcode-setup.md).
+Keterampilan yang terinstal muncul di menu slash TUI, mis. `/spec-driven-development`. Lihat [docs/commandcode-setup.md](docs/commandcode-setup.md).
 
 </details>
 
 <details>
-<summary><b>Other Agents</b></summary>
+<summary><b>Agen Lainnya</b></summary>
 
-Skills are plain Markdown - they work with any agent that accepts system prompts or instruction files. See [docs/getting-started.md](docs/getting-started.md).
+Keterampilan ini berupa Markdown biasa - mereka berfungsi dengan agen apa pun yang menerima prompt sistem atau file instruksi. Lihat [docs/getting-started.md](docs/getting-started.md).
 
 </details>
 
@@ -210,111 +210,111 @@ Skills are plain Markdown - they work with any agent that accepts system prompts
 
 ---
 
-## Adoption
+## Adopsi
 
-Already installed? How you roll the pack out depends on your codebase. The **[Adoption Guide](docs/adoption-guide.md)** covers two paths: the full lifecycle from day one for a greenfield project, or an incremental, verification-first rollout for an established codebase.
-
----
-
-## All 24 Skills
-
-The commands above are entry points. The pack includes 24 skills total — 23 lifecycle skills plus the `using-agent-skills` meta-skill. Each skill is a structured workflow with steps, verification gates, and anti-rationalization tables. You can also reference any skill directly.
-
-### Meta - Discover which skill applies
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [using-agent-skills](skills/using-agent-skills/SKILL.md) | Maps incoming work to the right skill workflow and defines shared operating rules | Starting a session or deciding which skill applies |
-
-### Define - Clarify what to build
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [interview-me](skills/interview-me/SKILL.md) | One-question-at-a-time interview that extracts what the user actually wants instead of what they think they should want, until ~95% confidence | The ask is underspecified, or the user invokes "interview me" / "grill me" |
-| [idea-refine](skills/idea-refine/SKILL.md) | Structured divergent/convergent thinking to turn vague ideas into concrete proposals | You have a rough concept that needs exploration |
-| [spec-driven-development](skills/spec-driven-development/SKILL.md) | Write a PRD covering objectives, commands, structure, code style, testing, and boundaries before any code | Starting a new project, feature, or significant change |
-
-### Plan - Break it down
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [planning-and-task-breakdown](skills/planning-and-task-breakdown/SKILL.md) | Decompose specs into small, verifiable tasks with acceptance criteria and dependency ordering | You have a spec and need implementable units |
-
-### Build - Write the code
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [incremental-implementation](skills/incremental-implementation/SKILL.md) | Thin vertical slices - implement, test, verify, commit. Feature flags, safe defaults, rollback-friendly changes | Any change touching more than one file |
-| [test-driven-development](skills/test-driven-development/SKILL.md) | Red-Green-Refactor, test pyramid (80/15/5), test sizes, DAMP over DRY, Beyonce Rule, browser testing | Implementing logic, fixing bugs, or changing behavior |
-| [context-engineering](skills/context-engineering/SKILL.md) | Feed agents the right information at the right time - rules files, context packing, MCP integrations | Starting a session, switching tasks, or when output quality drops |
-| [source-driven-development](skills/source-driven-development/SKILL.md) | Ground every framework decision in official documentation - verify, cite sources, flag what's unverified | You want authoritative, source-cited code for any framework or library |
-| [doubt-driven-development](skills/doubt-driven-development/SKILL.md) | Adversarial fresh-context review of every non-trivial decision in-flight - CLAIM → EXTRACT → DOUBT → RECONCILE → STOP, with optional user-authorized cross-model escalation | Stakes are high (production, security, irreversible), working in unfamiliar code, or a confident output is cheaper to verify now than to debug later |
-| [frontend-ui-engineering](skills/frontend-ui-engineering/SKILL.md) | Component architecture, design systems, state management, responsive design, WCAG 2.1 AA accessibility | Building or modifying user-facing interfaces |
-| [api-and-interface-design](skills/api-and-interface-design/SKILL.md) | Contract-first design, Hyrum's Law, One-Version Rule, error semantics, boundary validation | Designing APIs, module boundaries, or public interfaces |
-
-### Verify - Prove it works
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [browser-testing-with-devtools](skills/browser-testing-with-devtools/SKILL.md) | Chrome DevTools MCP for live runtime data - DOM inspection, console logs, network traces, performance profiling | Building or debugging anything that runs in a browser |
-| [debugging-and-error-recovery](skills/debugging-and-error-recovery/SKILL.md) | Five-step triage: reproduce, localize, reduce, fix, guard. Stop-the-line rule, safe fallbacks | Tests fail, builds break, or behavior is unexpected |
-
-### Review - Quality gates before merge
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [code-review-and-quality](skills/code-review-and-quality/SKILL.md) | Five-axis review, change sizing (~100 lines), severity labels (Nit/Optional/FYI), review speed norms, splitting strategies | Before merging any change |
-| [code-simplification](skills/code-simplification/SKILL.md) | Chesterton's Fence, Rule of 500, reduce complexity while preserving exact behavior | Code works but is harder to read or maintain than it should be |
-| [security-and-hardening](skills/security-and-hardening/SKILL.md) | OWASP Top 10 prevention, auth patterns, secrets management, dependency auditing, three-tier boundary system | Handling user input, auth, data storage, or external integrations |
-| [performance-optimization](skills/performance-optimization/SKILL.md) | Measure-first approach - Core Web Vitals targets, profiling workflows, bundle analysis, anti-pattern detection | Performance requirements exist or you suspect regressions |
-
-### Ship - Deploy with confidence
-
-| Skill | What It Does | Use When |
-|-------|-------------|----------|
-| [git-workflow-and-versioning](skills/git-workflow-and-versioning/SKILL.md) | Trunk-based development, atomic commits, change sizing (~100 lines), the commit-as-save-point pattern | Making any code change (always) |
-| [ci-cd-and-automation](skills/ci-cd-and-automation/SKILL.md) | Shift Left, Faster is Safer, feature flags, quality gate pipelines, failure feedback loops | Setting up or modifying build and deploy pipelines |
-| [deprecation-and-migration](skills/deprecation-and-migration/SKILL.md) | Code-as-liability mindset, compulsory vs advisory deprecation, migration patterns, zombie code removal | Removing old systems, migrating users, or sunsetting features |
-| [documentation-and-adrs](skills/documentation-and-adrs/SKILL.md) | Architecture Decision Records, API docs, inline documentation standards - document the *why* | Making architectural decisions, changing APIs, or shipping features |
-| [observability-and-instrumentation](skills/observability-and-instrumentation/SKILL.md) | Structured logging, RED metrics, OpenTelemetry tracing, symptom-based alerting - instrument as you build | Adding telemetry, or shipping anything that runs in production |
-| [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Pre-launch checklists, feature flag lifecycle, staged rollouts, rollback procedures, monitoring setup | Preparing to deploy to production |
+Sudah menginstal? Cara Anda menerapkannya bergantung pada basis kode Anda. **[Adopsi Panduan](docs/adoption-guide.md)** mencakup dua jalur: siklus hidup penuh dari hari pertama untuk proyek baru, atau penerapan inkremental, yang mengutamakan verifikasi untuk basis kode yang sudah mapan.
 
 ---
 
-## Agent Personas
+## Semua 24 Keterampilan
 
-Pre-configured specialist personas for targeted reviews:
+Perintah di atas adalah titik masuk. Paket ini mencakup 24 keterampilan total — 23 keterampilan siklus hidup ditambah meta-keterampilan `using-agent-skills`. Setiap keterampilan adalah alur kerja terstruktur dengan langkah-langkah, gerbang verifikasi, dan tabel anti-rasionalisasi. Anda juga dapat merujuk ke keterampilan apa pun secara langsung.
 
-| Agent | Role | Perspective |
+### Meta - Temukan keterampilan yang berlaku
+
+| Keterampilan | Apa yang Dilakukannya | Kapan Menggunakannya |
+|-------|-------------|----------|
+| [using-agent-skills](skills/using-agent-skills/SKILL.md) | Memetakan pekerjaan yang masuk ke alur kerja keterampilan yang tepat dan mendefinisikan aturan operasi bersama | Memulai sesi atau memutuskan keterampilan mana yang berlaku |
+
+### Definisikan - Perjelas apa yang akan dibangun
+
+| Keterampilan | Apa yang Dilakukannya | Kapan Menggunakannya |
+|-------|-------------|----------|
+| [interview-me](skills/interview-me/SKILL.md) | Wawancara satu pertanyaan pada satu waktu yang mengekstrak apa yang sebenarnya diinginkan pengguna, alih-alih apa yang mereka pikir mereka inginkan, hingga ~95% kepercayaan | Permintaan kurang spesifik, atau pengguna memanggil "interview me" / "grill me" |
+| [idea-refine](skills/idea-refine/SKILL.md) | Berpikir divergen/konvergen terstruktur untuk mengubah ide yang samar menjadi proposal konkret | Anda memiliki konsep kasar yang perlu dieksplorasi |
+| [spec-driven-development](skills/spec-driven-development/SKILL.md) | Menulis PRD yang mencakup sasaran, perintah, struktur, gaya kode, pengujian, dan batasan sebelum ada kode | Memulai proyek, fitur, atau perubahan signifikan yang baru |
+
+### Rencanakan - Pecah-pecah
+
+| Keterampilan | Apa yang Dilakukannya | Kapan Menggunakannya |
+|-------|-------------|----------|
+| [planning-and-task-breakdown](skills/planning-and-task-breakdown/SKILL.md) | Memecah spesifikasi menjadi tugas-tugas kecil yang dapat diverifikasi dengan kriteria penerimaan dan urutan ketergantungan | Anda memiliki spesifikasi dan membutuhkan unit yang dapat diimplementasikan |
+
+### Bangun - Tulis kode
+
+| Keterampilan | Apa yang Dilakukannya | Kapan Menggunakannya |
+|-------|-------------|----------|
+| [incremental-implementation](skills/incremental-implementation/SKILL.md) | Potongan vertikal tipis - implementasi, uji, verifikasi, commit. Feature flags, pengaturan default yang aman, perubahan ramah rollback | Setiap perubahan yang memengaruhi lebih dari satu file |
+| [test-driven-development](skills/test-driven-development/SKILL.md) | Red-Green-Refactor, piramida pengujian (80/15/5), ukuran pengujian, DAMP daripada DRY, Aturan Beyonce, pengujian browser | Menerapkan logika, memperbaiki bug, atau mengubah perilaku |
+| [context-engineering](skills/context-engineering/SKILL.md) | Memberi agen informasi yang tepat pada waktu yang tepat - file aturan, pemaketan konteks, integrasi MCP | Memulai sesi, beralih tugas, atau saat kualitas keluaran turun |
+| [source-driven-development](skills/source-driven-development/SKILL.md) | Mendasarkan setiap keputusan kerangka kerja (framework) pada dokumentasi resmi - verifikasi, kutip sumber, tandai yang tidak terverifikasi | Anda menginginkan kode otoritatif yang dikutip sumbernya untuk framework atau pustaka apa pun |
+| [doubt-driven-development](skills/doubt-driven-development/SKILL.md) | Tinjauan konteks baru yang berlawanan (adversarial) untuk setiap keputusan non-sepele yang sedang berlangsung - KLAIM → EKSTRAK → RAGU → REKONSILIASI → BERHENTI, dengan eskalasi lintas model yang diizinkan pengguna | Risikonya tinggi (produksi, keamanan, tidak dapat diubah), bekerja dalam kode asing, atau keluaran yang yakin lebih murah untuk diverifikasi sekarang daripada di-debug nanti |
+| [frontend-ui-engineering](skills/frontend-ui-engineering/SKILL.md) | Arsitektur komponen, sistem desain, manajemen status, desain responsif, aksesibilitas WCAG 2.1 AA | Membangun atau memodifikasi antarmuka yang menghadap pengguna |
+| [api-and-interface-design](skills/api-and-interface-design/SKILL.md) | Desain mengutamakan kontrak, Hukum Hyrum, Aturan Satu-Versi, semantik kesalahan, validasi batasan | Merancang API, batasan modul, atau antarmuka publik |
+
+### Verifikasi - Buktikan itu berfungsi
+
+| Keterampilan | Apa yang Dilakukannya | Kapan Menggunakannya |
+|-------|-------------|----------|
+| [browser-testing-with-devtools](skills/browser-testing-with-devtools/SKILL.md) | MCP Alat Pengembang Chrome untuk data proses aktif (runtime) - inspeksi DOM, log konsol, pelacakan jaringan, profil performa | Membangun atau men-debug apa pun yang berjalan di browser |
+| [debugging-and-error-recovery](skills/debugging-and-error-recovery/SKILL.md) | Triase lima langkah: reproduksi, lokalisasi, kurangi, perbaiki, jaga (guard). Aturan stop-the-line, mundur yang aman | Tes gagal, build rusak, atau perilaku tak terduga |
+
+### Tinjau - Gerbang kualitas sebelum merge
+
+| Keterampilan | Apa yang Dilakukannya | Kapan Menggunakannya |
+|-------|-------------|----------|
+| [code-review-and-quality](skills/code-review-and-quality/SKILL.md) | Tinjauan lima sumbu, penentuan ukuran perubahan (~100 baris), label keparahan (Nit/Opsional/FYI), norma kecepatan tinjauan, strategi pemisahan | Sebelum menggabungkan perubahan apa pun |
+| [code-simplification](skills/code-simplification/SKILL.md) | Pagar Chesterton, Aturan 500, kurangi kerumitan namun tetap pertahankan perilaku yang persis | Kode berfungsi namun lebih sulit dibaca atau di-maintain daripada yang seharusnya |
+| [security-and-hardening](skills/security-and-hardening/SKILL.md) | Pencegahan OWASP Top 10, pola auth, manajemen rahasia, audit dependensi, sistem batas tiga tingkat | Menangani input pengguna, auth, penyimpanan data, atau integrasi eksternal |
+| [performance-optimization](skills/performance-optimization/SKILL.md) | Pendekatan ukur-dulu - Target Core Web Vitals, alur kerja pembuatan profil, analisis bundle, deteksi anti-pola | Persyaratan performa ada atau Anda mencurigai adanya kemunduran (regressions) |
+
+### Rilis - Deploy dengan percaya diri
+
+| Keterampilan | Apa yang Dilakukannya | Kapan Menggunakannya |
+|-------|-------------|----------|
+| [git-workflow-and-versioning](skills/git-workflow-and-versioning/SKILL.md) | Pengembangan berbasis Trunk, commit atomik, ukuran perubahan (~100 baris), pola commit-sebagai-titik-simpan | Melakukan perubahan kode apa pun (selalu) |
+| [ci-cd-and-automation](skills/ci-cd-and-automation/SKILL.md) | Shift Left, Lebih Cepat Lebih Aman, feature flags, pipeline gerbang kualitas, loop umpan balik kegagalan | Menyiapkan atau memodifikasi pipeline build dan deploy |
+| [deprecation-and-migration](skills/deprecation-and-migration/SKILL.md) | Pola pikir kode-sebagai-kewajiban, deprecation wajib vs nasihat, pola migrasi, penghapusan kode zombie | Menghapus sistem lama, memigrasikan pengguna, atau menghentikan fitur (sunsetting) |
+| [documentation-and-adrs](skills/documentation-and-adrs/SKILL.md) | Rekaman Keputusan Arsitektur, dokumentasi API, standar dokumentasi sebaris (inline) - dokumentasikan *mengapa* | Membuat keputusan arsitektur, mengubah API, atau merilis fitur |
+| [observability-and-instrumentation](skills/observability-and-instrumentation/SKILL.md) | Pencatatan terstruktur, metrik RED, pelacakan OpenTelemetry, peringatan berbasis gejala - pasang instrumen saat Anda membangun | Menambahkan telemetri, atau merilis apa pun yang berjalan dalam produksi |
+| [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Daftar periksa prakeluncuran, siklus hidup feature flag, peluncuran bertahap, prosedur pembatalan (rollback), penyiapan pemantauan | Bersiap untuk rilis ke produksi |
+
+---
+
+## Persona Agen
+
+Persona spesialis terkonfigurasi untuk ulasan yang ditargetkan:
+
+| Agen | Peran | Perspektif |
 |-------|------|-------------|
-| [code-reviewer](agents/code-reviewer.md) | Senior Staff Engineer | Five-axis code review with "would a staff engineer approve this?" standard |
-| [test-engineer](agents/test-engineer.md) | QA Specialist | Test strategy, coverage analysis, and the Prove-It pattern |
-| [security-auditor](agents/security-auditor.md) | Security Engineer | Vulnerability detection, threat modeling, OWASP assessment |
-| [web-performance-auditor](agents/web-performance-auditor.md) | Web Performance Engineer | Core Web Vitals audit with Quick/Deep modes and a metric-honesty rule; run it via `/webperf` |
+| [code-reviewer](agents/code-reviewer.md) | Senior Staff Engineer | Tinjauan kode lima sumbu dengan standar "apakah staf engineer akan menyetujui ini?" |
+| [test-engineer](agents/test-engineer.md) | Spesialis QA | Strategi pengujian, analisis cakupan, dan pola Prove-It |
+| [security-auditor](agents/security-auditor.md) | Engineer Keamanan | Deteksi kerentanan, pemodelan ancaman, penilaian OWASP |
+| [web-performance-auditor](agents/web-performance-auditor.md) | Engineer Performa Web | Audit Core Web Vitals dengan mode Quick/Deep dan aturan kejujuran metrik; jalankan melalui `/webperf` |
 
-See [docs/agents.md](docs/agents.md) for the decision matrix, orchestration rules, and how personas compose with skills and slash commands.
+Lihat [docs/agents.md](docs/agents.md) untuk matriks keputusan, aturan orkestrasi, dan bagaimana persona tergabung dengan keterampilan dan perintah slash.
 
 ---
 
-## Reference Checklists
+## Daftar Periksa Referensi
 
-Quick-reference material that skills pull in when needed:
+Materi referensi cepat yang diambil oleh keterampilan saat diperlukan:
 
-| Reference | Covers |
+| Referensi | Mencakup |
 |-----------|--------|
-| [definition-of-done.md](references/definition-of-done.md) | Project-wide standing bar every change clears, contrasted with per-task acceptance criteria |
-| [testing-patterns.md](references/testing-patterns.md) | Test structure, naming, mocking, React/API/E2E examples, anti-patterns (JavaScript/TypeScript) |
-| [security-checklist.md](references/security-checklist.md) | Pre-commit checks, auth, input validation, headers, CORS, OWASP Top 10 |
-| [performance-checklist.md](references/performance-checklist.md) | Core Web Vitals targets, frontend/backend checklists, measurement commands |
-| [accessibility-checklist.md](references/accessibility-checklist.md) | Keyboard nav, screen readers, visual design, ARIA, testing tools |
-| [observability-checklist.md](references/observability-checklist.md) | On-call questions, structured logging, RED/USE metrics, tracing, symptom-based alerting, pre-launch gate |
-| [orchestration-patterns.md](references/orchestration-patterns.md) | Endorsed multi-persona orchestration patterns, anti-patterns, and the "personas don't invoke personas" rule |
+| [definition-of-done.md](references/definition-of-done.md) | Standar berdiri di seluruh proyek di mana setiap perubahan harus terpenuhi, kontras dengan kriteria penerimaan per-tugas |
+| [testing-patterns.md](references/testing-patterns.md) | Struktur pengujian, penamaan, mocking, contoh React/API/E2E, anti-pola (JavaScript/TypeScript) |
+| [security-checklist.md](references/security-checklist.md) | Pemeriksaan sebelum-commit, auth, validasi input, header, CORS, OWASP Top 10 |
+| [performance-checklist.md](references/performance-checklist.md) | Target Core Web Vitals, daftar periksa frontend/backend, perintah pengukuran |
+| [accessibility-checklist.md](references/accessibility-checklist.md) | Navigasi keyboard, pembaca layar, desain visual, ARIA, alat pengujian |
+| [observability-checklist.md](references/observability-checklist.md) | Pertanyaan siaga (on-call), pencatatan terstruktur, metrik RED/USE, pelacakan, peringatan berbasis gejala, gerbang prakeluncuran |
+| [orchestration-patterns.md](references/orchestration-patterns.md) | Pola orkestrasi multi-persona yang disahkan, anti-pola, dan aturan "persona tidak memanggil persona" |
 
 ---
 
-## How Skills Work
+## Cara Keterampilan Bekerja
 
-Every skill follows a consistent anatomy:
+Setiap keterampilan mengikuti anatomi yang konsisten:
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -325,29 +325,29 @@ Every skill follows a consistent anatomy:
 │  │ description: Guides agents through [task].│  │
 │  │              Use when…                    │  │
 │  └───────────────────────────────────────────┘  │                                                                                                
-│  Overview         → What this skill does        │
-│  When to Use      → Triggering conditions       │
-│  Process          → Step-by-step workflow       │
-│  Rationalizations → Excuses + rebuttals         │
-│  Red Flags        → Signs something's wrong     │
-│  Verification     → Evidence requirements       │
+│  Overview         → Apa yang dilakukan ini      │
+│  When to Use      → Kondisi pemicu              │
+│  Process          → Alur kerja langkah demi     │
+│  Rationalizations → Alasan + sanggahan          │
+│  Red Flags        → Tanda ada yang salah        │
+│  Verification     → Persyaratan bukti           │
 └─────────────────────────────────────────────────┘
 ```
 
-**Key design choices:**
+**Pilihan desain utama:**
 
-- **Process, not prose.** Skills are workflows agents follow, not reference docs they read. Each has steps, checkpoints, and exit criteria.
-- **Anti-rationalization.** Every skill includes a table of common excuses agents use to skip steps (e.g., "I'll add tests later") with documented counter-arguments.
-- **Verification is non-negotiable.** Every skill ends with evidence requirements - tests passing, build output, runtime data. "Seems right" is never sufficient.
-- **Progressive disclosure.** The `SKILL.md` is the entry point. Supporting references load only when needed, keeping token usage minimal.
+- **Proses, bukan sekadar prosa.** Keterampilan adalah alur kerja yang diikuti agen, bukan sekadar dokumen referensi yang mereka baca. Masing-masing memiliki langkah-langkah, pos pemeriksaan, dan kriteria keluar.
+- **Anti-rasionalisasi.** Setiap keterampilan mencakup tabel alasan umum yang digunakan agen untuk melewati langkah (misalnya, "Saya akan menambahkan pengujian nanti") beserta argumen sanggahan yang terdokumentasi.
+- **Verifikasi tidak dapat dinegosiasikan.** Setiap keterampilan berakhir dengan persyaratan bukti - pengujian lulus, output pembuatan, data proses (runtime). "Tampaknya benar" tidak pernah cukup.
+- **Pengungkapan progresif.** `SKILL.md` adalah titik masuk. Referensi pendukung hanya dimuat saat diperlukan, meminimalkan penggunaan token.
 
 ---
 
-## Project Structure
+## Struktur Proyek
 
 ```
 agent-skills/
-├── skills/                            # 24 skills (23 lifecycle + 1 meta)
+├── skills/                            # 24 keterampilan (23 siklus hidup + 1 meta)
 │   ├── interview-me/                  #   Define
 │   ├── idea-refine/                   #   Define
 │   ├── spec-driven-development/       #   Define
@@ -371,55 +371,55 @@ agent-skills/
 │   ├── documentation-and-adrs/        #   Ship
 │   ├── observability-and-instrumentation/ # Ship
 │   ├── shipping-and-launch/           #   Ship
-│   └── using-agent-skills/            #   Meta: how to use this pack
-├── agents/                            # 4 specialist personas
-├── references/                        # 7 supplementary checklists
-├── hooks/                             # Session lifecycle hooks
-├── .claude/commands/                  # 8 slash commands (Claude Code)
-├── .gemini/commands/                  # 8 slash commands (Gemini CLI)
-├── commands/                          # 8 slash commands (Antigravity CLI)
-├── plugin.json                        # Antigravity plugin manifest
-└── docs/                              # Setup guides per tool
+│   └── using-agent-skills/            #   Meta: cara menggunakan paket ini
+├── agents/                            # 4 persona spesialis
+├── references/                        # 7 daftar periksa tambahan
+├── hooks/                             # Kait siklus hidup sesi
+├── .claude/commands/                  # 8 perintah slash (Claude Code)
+├── .gemini/commands/                  # 8 perintah slash (Gemini CLI)
+├── commands/                          # 8 perintah slash (Antigravity CLI)
+├── plugin.json                        # Manifes plugin Antigravity
+└── docs/                              # Panduan pengaturan per alat
 ```
 
 ---
 
-## Why Agent Skills?
+## Mengapa Keterampilan Agen?
 
-AI coding agents default to the shortest path - which often means skipping specs, tests, security reviews, and the practices that make software reliable. Agent Skills gives agents structured workflows that enforce the same discipline senior engineers bring to production code.
+Agen pengodean AI menggunakan jalur terpendek sebagai bawaan - yang sering kali berarti melewati spesifikasi, pengujian, tinjauan keamanan, dan praktik yang membuat perangkat lunak dapat diandalkan. Agent Skills memberi agen alur kerja terstruktur yang menerapkan disiplin yang sama seperti yang dibawa senior engineer ke dalam kode produksi.
 
-Each skill encodes hard-won engineering judgment: *when* to write a spec, *what* to test, *how* to review, and *when* to ship. These aren't generic prompts - they're the kind of opinionated, process-driven workflows that separate production-quality work from prototype-quality work.
+Setiap keterampilan mengkodekan penilaian rekayasa yang dimenangkan dengan susah payah: *kapan* menulis spesifikasi, *apa* yang harus diuji, *bagaimana* meninjau, dan *kapan* merilis. Ini bukan prompt biasa - mereka adalah alur kerja berbasis proses dan berpendapat (opinionated) yang membedakan kualitas produksi dari kualitas prototipe.
 
-Skills bake in best practices from Google's engineering culture — including concepts from [Software Engineering at Google](https://abseil.io/resources/swe-book) and Google's [engineering practices guide](https://google.github.io/eng-practices/). You'll find Hyrum's Law in API design, the Beyonce Rule and test pyramid in testing, change sizing and review speed norms in code review, Chesterton's Fence in simplification, trunk-based development in git workflow, Shift Left and feature flags in CI/CD, and a dedicated deprecation skill treating code as a liability. These aren't abstract principles — they're embedded directly into the step-by-step workflows agents follow.
-
----
-
-## How it compares
-
-Wondering how this stacks up against [Superpowers](https://github.com/obra/superpowers) or [Matt Pocock's skills](https://github.com/mattpocock/skills)? See **[docs/comparison.md](docs/comparison.md)** for an honest, side-by-side look at how the three are shaped differently and when to reach for each — including a link to a controlled [head-to-head experiment](https://www.linkedin.com/pulse/superpowers-vs-agent-skills-faster-shipping-safer-reasoning-om-mishra-dzakf/).
+Keterampilan menanamkan praktik terbaik dari budaya rekayasa Google — termasuk konsep dari [Rekayasa Perangkat Lunak di Google (SWE Book)](https://abseil.io/resources/swe-book) dan panduan praktik rekayasa Google. Anda akan menemukan Hukum Hyrum dalam desain API, Aturan Beyonce dan piramida pengujian dalam pengujian, penentuan ukuran perubahan dan norma kecepatan ulasan dalam ulasan kode, Pagar Chesterton dalam penyederhanaan, pengembangan berbasis trunk dalam alur kerja git, Shift Left dan bendera fitur di CI/CD, dan keterampilan penghentian khusus yang memperlakukan kode sebagai kewajiban. Ini bukan prinsip abstrak — mereka disematkan secara langsung ke dalam alur kerja langkah-demi-langkah yang diikuti agen.
 
 ---
 
-## Contributing
+## Bagaimana perbandingannya
 
-Skills should be **specific** (actionable steps, not vague advice), **verifiable** (clear exit criteria with evidence requirements), **battle-tested** (based on real workflows), and **minimal** (only what's needed to guide the agent).
-
-See [docs/skill-anatomy.md](docs/skill-anatomy.md) for the format specification and [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Penasaran bagaimana ini sebanding dengan [Superpowers](https://github.com/obra/superpowers) atau [Keterampilan Matt Pocock](https://github.com/mattpocock/skills)? Lihat **[docs/comparison.md](docs/comparison.md)** untuk tinjauan jujur dan berdampingan tentang bagaimana ketiganya dibentuk secara berbeda dan kapan harus menggunakan masing-masing — termasuk tautan ke eksperimen head-to-head yang terkontrol [pengiriman lebih cepat, pemikiran lebih aman](https://www.linkedin.com/pulse/superpowers-vs-agent-skills-faster-shipping-safer-reasoning-om-mishra-dzakf/).
 
 ---
 
-## Team
+## Berkontribusi
 
-agent-skills is built and maintained by:
+Keterampilan harus **spesifik** (langkah-langkah yang dapat ditindaklanjuti, bukan saran samar), **dapat diverifikasi** (kriteria keluar yang jelas dengan persyaratan bukti), **teruji di lapangan** (berdasarkan alur kerja nyata), dan **minimal** (hanya yang diperlukan untuk memandu agen).
 
-| | Name | GitHub | Role |
+Lihat [docs/skill-anatomy.md](docs/skill-anatomy.md) untuk spesifikasi format dan [CONTRIBUTING.md](CONTRIBUTING.md) untuk pedoman.
+
+---
+
+## Tim
+
+agent-skills dibangun dan dikelola oleh:
+
+| | Nama | GitHub | Peran |
 |---|------|--------|------|
-| <img src="https://github.com/addyosmani.png?size=120" width="60" height="60" alt="Addy Osmani"> | **Addy Osmani** | [@addyosmani](https://github.com/addyosmani) | Creator |
-| <img src="https://github.com/federicobartoli.png?size=120" width="60" height="60" alt="Federico Bartoli"> | **Federico Bartoli** | [@federicobartoli](https://github.com/federicobartoli) | Collaborator |
-| <img src="https://github.com/nucliweb.png?size=120" width="60" height="60" alt="Joan León"> | **Joan León** | [@nucliweb](https://github.com/nucliweb) | Collaborator |
+| <img src="https://github.com/addyosmani.png?size=120" width="60" height="60" alt="Addy Osmani"> | **Addy Osmani** | [@addyosmani](https://github.com/addyosmani) | Pembuat |
+| <img src="https://github.com/federicobartoli.png?size=120" width="60" height="60" alt="Federico Bartoli"> | **Federico Bartoli** | [@federicobartoli](https://github.com/federicobartoli) | Kolaborator |
+| <img src="https://github.com/nucliweb.png?size=120" width="60" height="60" alt="Joan León"> | **Joan León** | [@nucliweb](https://github.com/nucliweb) | Kolaborator |
 
 ---
 
-## License
+## Lisensi
 
-MIT - use these skills in your projects, teams, and tools.
+MIT - gunakan keterampilan ini dalam proyek, tim, dan alat Anda.
